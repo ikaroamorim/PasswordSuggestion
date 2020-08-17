@@ -10,32 +10,39 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+<!-- Font awesome -->
+    <link rel="stylesheet" href="/plugins/fontawesome-free-5.14.0-web/css/all.min.css">
+
 
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <h1>Password Generation Tool</h1>
+    </header>
+    <div class="header-replace"></div>
     <div class="container">
         <section class="main">
             <div class="settings-main">
                 <div class="row">
-                    <h1>Create Secure Passwords</h1>
+                    <h2>Create Secure Passwords</h2>
                 </div>
                 <div class="row">
-                    <span id="password">Password</span>
+                    <!-- <span id="password">Password</span> -->
+                    <input type="text" name="password" id="password" placeholder="Password">
                 </div>
                 <div class="row justify-content-around">
-                    <button onclick="generatePassword()" class="col-4 btn btn-success">Generate</button>
-                    <button class="col-4 btn btn-success">Copy to Clipboard</button>
+                    <button onclick="generatePassword()" class="col-4 btn btn-success"><i class="fas fa-check"></i> Generate</button>
+                    <button onclick="copyPassword()" class="col-4 btn btn-success"><i class="far fa-clipboard"></i> Copy to Clipboard</button>
                 </div>
                 <div class="row form-group form-check custom-check">
                     <input type="checkbox" name="custom-settings" id="ctm-sett" class="form-check-input"
-                    onclick="toggleCustom()">
+                        onclick="toggleCustom()">
                     <label for="ctm-sett" class="form-check-label">Use the suggested settings</label>
                 </div>
             </div>
-            <div class="settings-custom" id="settings-custom">
+            <div class="settings-custom hide" id="settings-custom">
                 <div class="row">
                     <input type="number" name="capital" id="capital" value="1" max="20">
                     <label for="capital">Capital Letters</label>
@@ -49,8 +56,8 @@
                     <label for="number">Numbers</label>
                 </div>
                 <div class="row">
-                        <input type="number" name="special" id="special" value="2" max="20">
-                        <label for="special">Special Characters</label>
+                    <input type="number" name="special" id="special" value="2" max="20">
+                    <label for="special">Special Characters</label>
                 </div>
 
 

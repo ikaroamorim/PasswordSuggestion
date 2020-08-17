@@ -6,14 +6,21 @@ $(document).ready(() => {
     })
 
 
+    copyPassword = () => {
+        let psw = $('#password')
+
+        psw[0].select()
+        psw[0].setSelectionRange(0, 99999)
+
+        document.execCommand("copy")
+    }
+
     toggleCustom = () => {
         //Get the Custom checkbox
         let custom = $('#ctm-sett')
-        if (custom[0].checked){
-            console.log("checked")
+        if (custom[0].checked) {
             $('#settings-custom').first().removeClass("hide")
-        }else{
-            console.log("unchecked")
+        } else {
             $('#settings-custom').first().addClass("hide")
         }
     }
@@ -70,6 +77,6 @@ $(document).ready(() => {
         }
 
         //Changing span text
-        let ansBox = $('#password').html(result)
+        let ansBox = $('#password').val(result)
     }
 })
